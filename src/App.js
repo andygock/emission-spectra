@@ -6,11 +6,10 @@ import './styles.css';
 const App = () => {
   const [size, setSize] = React.useState([1280, 720]); // [width, height]
   const [width, height] = size;
-  // console.log(size);
 
   return (
     <div>
-      <Resolutions onSelect={setSize} />
+      <Resolutions currentSize={size} onSelect={setSize} />
       <Canvas width={width} height={height} />
     </div>
   );

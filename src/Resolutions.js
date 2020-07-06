@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 const sizes = [
   [1280, 720],
@@ -9,13 +10,25 @@ const sizes = [
   [3840, 2160],
 ];
 
-const Resolutions = ({ onSelect = () => null }) =>
-  sizes.map(([w, h], index) => (
-    <span
-      key={index}
-      className="tag res"
-      onClick={() => onSelect([w, h])}
-    >{`${w}x${h}`}</span>
-  ));
+const Resolutions = ({
+  currentSize: [currentWidth, currentHeight],
+  onSelect = () => null,
+}) => (
+  <div className="tags">
+    {sizes.map(([w, h], index) => (
+      <span
+        key={index}
+        className={classnames([
+          'tag',
+          'res',
+          {
+            'is-dark': currentWidth === w && currentHeight === h,
+          },
+        ])}
+        onClick={() => onSelect([w, h])}
+      >{`${w}x${h}`}</span>
+    ))}
+  </div>
+);
 
 export default Resolutions;
