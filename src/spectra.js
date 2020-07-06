@@ -101,9 +101,14 @@ export const paint = (canvas, options = {}) => {
   const defaultOptions = {
     // define elements to display
     elements: ['H'],
+
+    // use default drawLines() options
+    lineOptions: {},
   };
 
   const opts = { ...defaultOptions, ...options };
 
-  opts.elements.forEach((element) => drawLines(canvas, emission[element]));
+  opts.elements.forEach((element) =>
+    drawLines(canvas, emission[element], opts.lineOptions)
+  );
 };

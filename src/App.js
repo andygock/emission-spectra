@@ -3,7 +3,7 @@ import Resolutions from './Resolutions';
 import Canvas from './Canvas';
 import './styles.css';
 import Elements from './Elements';
-import Input from './Input';
+import Slider from './Slider';
 
 const App = () => {
   const [size, setSize] = React.useState([1280, 720]); // [width, height]
@@ -21,9 +21,29 @@ const App = () => {
     <div>
       <Resolutions currentSize={size} onSelect={setSize} />
       <Elements current={element} onSelect={setElement} />
-      <Input text="Alpha" onUpdate={setAlpha} />
-      <Input text="Line width" onUpdate={setLineWidth} />
-      <Canvas width={width} height={height} element={element} />
+      <Slider text="Alpha" value={alpha} onUpdate={setAlpha} />
+      <Slider
+        text="Line width"
+        min={0.001}
+        max={0.1}
+        step={0.005}
+        onUpdate={setLineWidth}
+        value={lineWidth}
+      />
+      <Slider
+        text="Line height"
+        min={0.01}
+        max={1}
+        step={0.01}
+        onUpdate={setLineHeight}
+        value={lineHeight}
+      />
+      <Canvas
+        width={width}
+        height={height}
+        element={element}
+        lineOptions={{ alpha, lineWidth, lineHeight, lineOffsetY }}
+      />
     </div>
   );
 };
