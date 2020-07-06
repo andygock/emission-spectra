@@ -1,0 +1,11 @@
+body {
+  font-family: sans-serif;
+}
+
+#image {
+  border: solid 1px #ccc;
+}
+
+#resolution .tag {
+  cursor: pointer;
+}
