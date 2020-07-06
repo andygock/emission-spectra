@@ -6,6 +6,10 @@ body {
   border: solid 1px #ccc;
 }
 
+.tags {
+  display: inline-block;
+}
+
 .tag {
   cursor: pointer;
 }
