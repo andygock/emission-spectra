@@ -90,15 +90,20 @@ const drawLines = (canvas, wavelengths, options) => {
   });
 };
 
-export const paint = (canvas) => {
+export const paint = (canvas, options = {}) => {
   // draw background colour
   const { width, height } = canvas;
   const ctx = canvas.getContext('2d');
   ctx.fillStyle = `#111`;
   ctx.fillRect(0, 0, width, height);
 
-  // define elements to display
-  const elements = ['H'];
+  // merge custom options
+  const defaultOptions = {
+    // define elements to display
+    elements: ['H'],
+  };
 
-  elements.forEach((element) => drawLines(canvas, emission[element]));
+  const opts = { ...defaultOptions, ...options };
+
+  opts.elements.forEach((element) => drawLines(canvas, emission[element]));
 };

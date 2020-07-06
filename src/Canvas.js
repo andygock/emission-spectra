@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { paint } from './spectra';
 
-const Canvas = ({ width, height }) => {
+const Canvas = ({ width, height, element }) => {
   const ref = React.createRef();
 
   useEffect(() => {
-    paint(ref.current);
-  }, [width, height]);
+    paint(ref.current, {
+      // we can display multiple elements, but for now, only display one at a time
+      elements: [element],
+    });
+  }, [width, height, element]);
 
   return (
     <div>
