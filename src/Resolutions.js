@@ -14,7 +14,7 @@ const Resolutions = ({
   currentSize: [currentWidth, currentHeight],
   onSelect = () => null,
 }) => (
-  <div className="tags">
+  <div className="tag-group">
     {sizes.map(([w, h], index) => (
       <span
         key={index}

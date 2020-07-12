@@ -1,15 +1,42 @@
 body {
   font-family: sans-serif;
+  margin: 0.5rem;
 }
 
 #image {
   border: solid 1px #ccc;
 }
 
-.tags {
-  display: inline-block;
+.tag-group {
+  text-align: center;
 }
 
 .tag {
   cursor: pointer;
+  width: 100px;
+  margin-bottom: 0 !important; /* overwrite bulma margins */
+}
+
+.slider {
+  display: inline-block;
+  font-size: small;
+  text-align: center;
+}
+
+.controls {
+  flex: 0 2 0;
+  text-align: center;
+}
+
+.controls h2 {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.canvas {
+  flex: 0 1 auto;
+}
+
+.ui {
+  display: flex;
 }

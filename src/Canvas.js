@@ -5,8 +5,6 @@ const Canvas = ({ width, height, element, lineOptions = {} }) => {
   const ref = React.createRef();
 
   useEffect(() => {
-    console.log('lineOptions =', lineOptions);
-
     paint(ref.current, {
       // we can display multiple elements, but for now, only display one at a time
       elements: [element],

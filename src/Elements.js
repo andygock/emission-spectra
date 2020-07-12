@@ -5,7 +5,7 @@ const elements = ['H', 'He'];
 
 const Elements = ({ current = 'H', onSelect = () => null }) => {
   return (
-    <div className="tags">
+    <div className="tag-group">
       {elements.map((el, index) => (
         <span
           className={classnames(['tag', { 'is-dark': current === el }])}
