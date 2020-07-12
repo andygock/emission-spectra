@@ -43,6 +43,17 @@ const App = () => {
 
         <h2>Element</h2>
         <Elements current={element} onSelect={setElement} />
+
+        <div className="footer-links">
+          <p>
+            <a
+              href="https://github.com/andygock/emission-spectra"
+              className="href"
+            >
+              GitHub
+            </a>
+          </p>
+        </div>
       </div>
       <div className="canvas">
         <Canvas

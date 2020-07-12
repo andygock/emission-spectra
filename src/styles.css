@@ -40,3 +40,7 @@ body {
 .ui {
   display: flex;
 }
+
+.footer-links {
+  margin-top: 1rem;
+}
