@@ -32,11 +32,19 @@ const App = () => {
         />
         <Slider
           text="Line height"
-          min={0.01}
+          min={0.1}
           max={1}
           step={0.01}
           onUpdate={setLineHeight}
           value={lineHeight}
+        />
+        <Slider
+          text="Line offset"
+          min={0.0}
+          max={0.8}
+          step={0.01}
+          onUpdate={setLineOffsetY}
+          value={lineOffsetY}
         />
         <h2>Resolution</h2>
         <Resolutions currentSize={size} onSelect={setSize} />
