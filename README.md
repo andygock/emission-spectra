@@ -24,4 +24,4 @@ If required, use the following Netlify build command
 
 ## Demo
 
-- <https://emission-spectra.netlify.app/>
+- <https://andygock.github.io/emission-spectra/>
